@@ -13,8 +13,8 @@
             </div>
           </div>
           <div class="tabs">
-            <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Profile</a>
-            <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Courses</a>
+            <a @click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Profile</a>
+            <a @click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Courses</a>
           </div>
         </div>
       </section>
@@ -31,8 +31,7 @@ import Courses from "./components/Courses";
 import Course from "./Course.js";
 export default {
   name: "app",
-  el: "#tabs",
-  data: () => {
+ data: () => {
     return {
       activetab: 1,
       allCourses: [
