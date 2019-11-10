@@ -25,7 +25,7 @@
         name: "Profile",
         data: () => {
             return { 
-                user: new User("John", "Dover", "11/10/1990", "Software Engineering", 2.75)
+                user: new User("John", "Doe", "11/10/1990", "Software Engineering", 2.75)
             }
         }
     }
