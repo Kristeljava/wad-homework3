@@ -11,11 +11,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(course, index) in completedCourses" :key="index.id">
+        <tr v-for="(courses, index) in allCourses" :key="index.id">
           <td>{{index+1}}</td>
-          <td>{{course.title}}</td>
-          <td>{{course.semester}}</td>
-          <td>{{course.grade}}</td>
+          <td>{{courses.title}}</td>
+          <td>{{courses.semester}}</td>
+          <td>{{courses.grade}}</td>
         </tr>
       </tbody>
     </table>
@@ -64,27 +64,22 @@ export default {
       title: "",
       grade: "",
       semester: "",
-      completedCourses: [
-        new Course("Agile software development", 1, 82),
-        new Course("System modeling", 1, 85),
-        new Course("Object-oriented programming", 2, 99),
-        new Course("Estonian language level A2", 2, 65)
-      ],
       addButtonClicked: false
     };
   },
   methods: {
+    //kursuste lisamine tabelisse
     addCourse: function() {
-      this.completedCourses.push(
-        new Course(this.title, this.semester, this.grade)
-      );
+      this.allCourses.push(new Course(this.title, this.semester, this.grade));
       this.title = "";
       this.semester = "";
       this.grade = "";
       this.addButtonClicked = false;
     }
   },
-  props: {}
+  props: {
+    allCourses: Array
+  }
 };
 </script>
 
