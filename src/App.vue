@@ -5,6 +5,7 @@
       <section id="main">
         <div id="tabs">
           <div class="content">
+              <!-- Tab-i valikuga muutub container sisuks olev komponent.  -->
             <div v-if="activetab === 1">
               <Profile :allCourses="allCourses" />
             </div>
@@ -13,6 +14,7 @@
             </div>
           </div>
           <div class="tabs">
+              <!-- Tab-ile klikates muutub see aktiivseks. class on active, kui tingimus activetab===1 on tõene. -->
             <a @click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Profile</a>
             <a @click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Courses</a>
           </div>
