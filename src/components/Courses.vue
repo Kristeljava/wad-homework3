@@ -11,29 +11,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Agile software development</td>
-                <td>1</td>
-                <td>82</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>System modeling</td>
-                <td>1</td>
-                <td>85</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Object-oriented programming</td>
-                <td>2</td>
-                <td>99</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Estonian language Level A2</td>
-                <td>2</td>
-                <td>65</td>
+            <tr v-for="(course, index) in completedCourses"
+            :key="index.id">
+                <td>{{index+1}}</td>
+                <td>{{course.title}}</td>
+                <td>{{course.semester}}</td>
+                <td>{{course.grade}}</td>
             </tr>
             </tbody>
         </table>
@@ -53,8 +36,19 @@
 </template>
 
 <script>
+    import Course from "../Course.js"
     export default {
-        name: "Courses"
+        name: "Courses",
+        data: () => {
+            return {
+                completedCourses: [
+                    new Course("Agile software development", 1 , 82),
+                    new Course("System modeling", 1 , 85),
+                    new Course("Object-oriented programming", 2 , 99),
+                    new Course("Estonian language level A2", 2 , 65)
+                ]
+            } 
+        }
     }
 </script>
 
