@@ -4,6 +4,7 @@
             <img src="../assets/me.png" id="picture" alt="My picture">
         </div>
         <div class="info">
+            <!-- user objektist võetakse kasutaja andmed ja väljastatakse veebilehele. -->
             <ul>
                 <li id="name">{{user.firstname + " " + user.lastname}}</li>
                 <li id="birthdate"> {{user.birthdate}} </li>

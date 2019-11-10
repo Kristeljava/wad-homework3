@@ -75,6 +75,7 @@
     .content {
         padding: 10px;
         border: 1px solid #cbcbcb;
+        margin-bottom: 10px
     }
 
     .tabs a {
