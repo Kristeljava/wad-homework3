@@ -39,20 +39,10 @@ export default {
         new Course("System modeling", 1, 85),
         new Course("Object-oriented programming", 2, 99),
         new Course("Estonian language level A2", 2, 65)
-      ],
-      sum: 0
+      ]
     };
   },
   methods: {},
-  computed: {
-    calculateAverage: function() {
-      let summa = 0;
-      for (let i = 0; i < this.allCourses.length; i++) {
-        summa += this.allCourses[i].grade;
-      }
-      return summa;
-    }
-  },
   components: {
     Courses,
     Profile,

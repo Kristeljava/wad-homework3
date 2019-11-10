@@ -28,6 +28,7 @@ export default {
     };
   },
   methods: {
+    //funktsioon, mis arvutab 0-4-ni hinde väärtuse, mis on antud algul 0-100 väärtusena
     GPA: function(avgGra) {
       if (avgGra > 90) {
         return 4;
@@ -45,9 +46,11 @@ export default {
     }
   },
   computed: {
+    //keskmise arvutamise funktsioon.
     calculateAverage: function() {
       let summa = 0;
       for (let i = 0; i < this.allCourses.length; i++) {
+        //oluline on, et kasutatud parseInt-i muidu jätab stringiks pärast arvutades.
         summa += parseInt(this.GPA(this.allCourses[i].grade));
       }
       summa = summa / this.allCourses.length;
@@ -56,8 +59,6 @@ export default {
   },
   props: {
     allCourses: Array
-    // sum: Number,
-    // calculateAverage: Number
   }
 };
 </script>
