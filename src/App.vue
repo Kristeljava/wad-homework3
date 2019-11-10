@@ -13,8 +13,8 @@
             </div>
           </div>
           <div class="tabs">
-            <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Profile</a>
-            <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Courses</a>
+            <a @click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Profile</a>
+            <a @click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Courses</a>
           </div>
         </div>
       </section>
@@ -95,6 +95,7 @@ main {
 .content {
   padding: 10px;
   border: 1px solid #cbcbcb;
+  margin-bottom: 10px;
 }
 
 .tabs a {

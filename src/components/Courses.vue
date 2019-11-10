@@ -22,13 +22,15 @@
     <br />
     <br />
     <div>
+        <!-- Antud on boolean addButtonClicked, mis iga "+" nuppu vajutamise järel 
+        muudab väärtust. Kui väärtus on true siis näidatakse kasutajale uue kursuse
+        sisestusvormi.  -->
       <button
-        v-if="!addButtonClicked"
         id="add-course-button"
         class="blue-button"
-        @click="addButtonClicked=true"
+        @click="addButtonClicked=!addButtonClicked"
       >+</button>
-      <span v-else-if="addButtonClicked" id="add-course">
+      <span v-if="addButtonClicked" id="add-course">
         <input class="input" v-model="title" type="text" placeholder="Course title" id="title" />
         <input
           class="input"
@@ -65,7 +67,8 @@ export default {
       grade: "",
       semester: "",
       addButtonClicked: false
-    };
+    }
+    
   },
   methods: {
     //kursuste lisamine tabelisse
